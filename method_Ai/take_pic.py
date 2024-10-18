@@ -16,7 +16,7 @@ stop_flag = False  # 全局停止旗標
 
 
 def update_json(key, value):
-    file_path = r'config.json'
+    file_path = r"D:\cnc_gui_s-master\cnc_gui\bin\Debug\config.json"
 
     # 檢查文件是否存在，如果不存在則創建一個空的 JSON 文件
     if not os.path.exists(file_path):
@@ -27,7 +27,7 @@ def update_json(key, value):
         # 讀取現有的 JSON 數據
         with open(file_path, 'r') as file:
             data = json.load(file)
-
+        print(f"更新鍵: {key}, 更新值: {value}")
         # 更新正確的 key
         data[key] = value  # roi1 積屑占比
         # 將更新的內容寫入到 JSON 文件
@@ -68,5 +68,5 @@ def take_picture():
 
 
 if __name__ == '__main__':
-    time.sleep(3)
+    time.sleep(2)
     take_picture()
